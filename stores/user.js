@@ -65,7 +65,8 @@ export const useUserStore = defineStore('user', {
     },
 
     async getTokens() {
-      await $axios.get('/sanctum/csrf-cookie')
+     let res = await $axios.get('/sanctum/csrf-cookie')
+     console.log(res)
     },
 
     async login(email, password) {
