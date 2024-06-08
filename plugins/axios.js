@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default defineNuxtPlugin((NuxtApp) => {
-    axios.defaults.baseURL = 'https://laravelapi.academiaunitau.site/api'
+    axios.defaults.baseURL = 'https://www.laravelapi.academiaunitau.site/api'
 
     axios.defaults.withCredentials = true;
     axios.defaults.withXSRFToken = true;
