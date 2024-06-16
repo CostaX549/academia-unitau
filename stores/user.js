@@ -17,7 +17,7 @@ export const useUserStore = defineStore('user', {
     allAgendamentos: null,
     
     isMobile: false,
- 
+    
     addLinkOverlay: false,
     isPreviewOverlay: false,
    
@@ -76,11 +76,22 @@ await $axios.get('/sanctum/csrf-cookie')
       })
     },
 
+   
+
     async addAgendamento(date, time) {
         await $axios.post('/api/events/create', {
           date: date,
           time: time
         })
+    },
+
+    async getVagas(date, time) {
+   
+      let res = await $axios.patch("/api/getVagas", {
+        date: date,
+        time: time
+      })
+      return res.data.vagas;
     },
 
     async cancelarAgendamento(id) {

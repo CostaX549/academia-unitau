@@ -10,7 +10,8 @@ export const useGeneralStore = defineStore('general', {
     state: () => ({
    disabledDays: null,
    removedDates: null,
-   addedDates: null
+   addedDates: null,
+
    
        
       }),
@@ -33,6 +34,8 @@ export const useGeneralStore = defineStore('general', {
           
             this.removedDates = res.data.removedDates
            },
+
+         
 
            async getAddedDates() {
             let res  = await $axios.get('/api/addeddates')

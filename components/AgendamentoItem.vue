@@ -10,18 +10,20 @@
             </span>
           </div>
           <p class="block mt-1 text-lg leading-tight font-medium text-black">
-            {{ agendamento.datetime }} - {{ agendamento.time }}
+            {{ agendamento.datetime }} - {{ agendamento.time }} 
           </p>
           <p class="mt-2 text-gray-500">Academia: {{ agendamento.academia.phone }}</p>
           <div class="mt-5 relative flex">
             <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" :src="user.image" alt="Avatar" v-for="user in agendamento.users" :key="user.id">
           </div>
+          <p class="text-green-500 font-lg" >Vagas disponíveis para esse horário: {{ agendamento.vagas }}</p>
           <button @click="openDetails" class="mt-5 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
             Lista de Presença
           </button>
           <button class="mt-5 ml-3 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
             Cancelar Agendamento
           </button>
+        
         </div>
       </div>
     </div>

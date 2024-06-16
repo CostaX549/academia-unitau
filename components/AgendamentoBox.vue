@@ -9,7 +9,7 @@
            </div>
            <div class="flex items-center justify-end py-1 mt-4">
               
-               <div v-if="!isMobile" class="flex items-center">
+               <div class="flex items-center">
                   <div class="flex items-center px-1.5 py-[2px] rounded-md relative ">
                    <button
                    @click="isDelete = true; isUploadImage = false"

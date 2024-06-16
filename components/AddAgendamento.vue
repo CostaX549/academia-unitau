@@ -46,6 +46,7 @@
     
     />
 </div>
+<div class="text-green-500 font-lg mt-5" v-if="vagas > 0">Vagas Restantes: {{ vagas }}</div>
 <div class="mt-2" v-if="errors">
 <span v-if="errors?.date"  class="text-red-500 text-[14px] font-semibold">
             {{ errors.date ? errors.date[0] : '' }}
@@ -88,10 +89,21 @@ let selectedHorario = ref(null)
 let dateValue = ref(null)
 let horario = ref(null)
 let errors = ref(null)
+let vagas = ref(0)
 
 let fakeHorarios = ref([])
 let disabledDates = ref([  ]);
+watch(selectedHorario, (newHorario) => {
+    // Aqui você pode chamar a função desejada
+    handleSelectedHorarioUpdate(newHorario);
+});
 
+const handleSelectedHorarioUpdate = async (newHorario) => {
+let res = await userStore.getVagas(dateValue.value, selectedHorario.value);
+vagas.value = res;
+   
+   
+};
 
 onMounted( async () => {
     try {
@@ -139,7 +151,7 @@ watch(dateValue, async (newDate) => {
   try {
         const res = await generalStore.getDisponibleHours(newDate)
         fakeHorarios.value = res.data.horarios
-     
+        
       } catch (error) {
         console.error('Erro ao buscar horários disponíveis:', error)
       }
@@ -158,7 +170,7 @@ const addLink = async () => {
    
         await userStore.addAgendamento(dateValue.value, selectedHorario.value)
         await userStore.getAllAgendamentos()
-      
+        handleSelectedHorarioUpdate()
         setTimeout(() => { 
             emits('close')
            

@@ -40,6 +40,7 @@
     
     />
 </div>
+<div class="text-green-500 font-lg mt-5" v-if="vagas > 0">Vagas Restantes: {{ vagas }}</div>
             </div>
 
             <button
@@ -65,7 +66,7 @@ const { addLinkOverlay } = storeToRefs(userStore)
 import { useGeneralStore } from '~~/stores/general'
 const generalStore = useGeneralStore()
 let disabledDates = ref([])
-
+let vagas = ref(0)
 
 
 onMounted(async () =>  {
@@ -125,10 +126,23 @@ let errors = ref(null)
 
 let fakeHorarios = ref([])
 
+watch(selectedHorario, (newHorario) => {
+    // Aqui você pode chamar a função desejada
+    handleSelectedHorarioUpdate();
+});
+
+const handleSelectedHorarioUpdate = async () => {
+let res = await userStore.getVagas(dateValue.value, selectedHorario.value);
+vagas.value = res;
+   
+   
+};
+
 const addLink = async () => {
     try {
         await userStore.addAgendamento(dateValue.value, selectedHorario.value)
         await userStore.getAllAgendamentos()
+        handleSelectedHorarioUpdate()
         setTimeout(() => { 
            
             addLinkOverlay.value = false

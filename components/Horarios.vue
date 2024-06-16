@@ -10,6 +10,7 @@
     >
       {{ horario }}
     </button>
+ 
   </div>
 </template>
 
@@ -21,9 +22,11 @@ let { horarios } = toRefs(props);
 
 const horarioSelecionado = ref(null);
 
+
 const emit = defineEmits(['update:horarioSelecionado']);
 
-const selectHorario = (horario) => {
+const selectHorario = async (horario) => {
+ 
   horarioSelecionado.value = horarioSelecionado.value === horario ? null : horario;
   emit('update:horarioSelecionado', horarioSelecionado.value);
 }
