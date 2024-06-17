@@ -41,6 +41,20 @@
 
     <div class="-mx-3 md:flex mb-6">
       <div class="md:w-full px-3">
+        <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+          MÁXIMO DE FALTAS
+        </label>
+        <TextInput 
+          placeholder="Número"
+          v-model:input="faltas"
+          inputType="number"
+          :error="errors && errors.faltas ? errors.faltas[0] : ''"
+        />
+      </div>
+    </div>
+
+    <div class="-mx-3 md:flex mb-6">
+      <div class="md:w-full px-3">
         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
           Dias da Semana
         </label>
@@ -91,6 +105,7 @@ let capacidade = ref(null)
 let selectedDays = ref([])
 let openingTimes = ref({})
 let errors = ref(null)
+let faltas = ref(null)
 let closingTimes = ref({})
 let daysOfWeek = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
 const isLoading = ref(false);
@@ -102,6 +117,7 @@ const showAddLinkFunc = async () => {
   const payload = {
     name: name.value,
     phone: telefone.value,
+    max_faltas: faltas.value,
     capacidade: capacidade.value,
     schedule: selectedDays.value.map(day => ({
       day,
@@ -133,6 +149,7 @@ onMounted(() => {
   name.value = academia.value.name
   telefone.value = academia.value.phone
   capacidade.value = academia.value.capacidade
+  faltas.value = academia.value.faltas
 
   academia.value.schedules.forEach(schedule => {
   

@@ -98,14 +98,9 @@ await $axios.get('/sanctum/csrf-cookie')
       await $axios.patch(`/api/events/cancelaragendamento/${id}`)
     },
 
-    async register(name, email, ra, password, confirmPassword) {
-      await $axios.post('/register', {
-        name: name,
-        email: email,
-        ra: ra,
-        password: password,
-        password_confirmation: confirmPassword
-      })
+    async register(formData) {
+     
+      await $axios.post('/register', formData);
     },
 
     async getUser() {

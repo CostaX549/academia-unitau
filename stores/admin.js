@@ -68,14 +68,16 @@ export const useAdminStore = defineStore('admin', {
            let res = await $axios.get('/api/getall')
            this.allEventos = res.data.events
          },
-         async addUser(name, email, ra, role) {
+         async addUser(name, email, ra, role, curso, periodo) {
           
         
              await $axios.post('/api/users/create', {
                 name: name,
                 email: email,
                 ra: ra,
-                role: role
+                role: role,
+                curso: curso,
+                periodo: periodo
 
               })
              

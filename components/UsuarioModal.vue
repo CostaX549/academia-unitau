@@ -56,6 +56,24 @@
                     />
                 </div> 
 
+                <div class="my-4">
+                            <TextInput 
+                        placeholder="Curso"
+                        v-model:input="curso"
+                        inputType="text"
+                        :error="errors && errors.curso ? errors.curso[0] : ''"
+                    />
+                </div> 
+
+                <div class="my-4">
+                    <TextInput 
+                        placeholder="Período"
+                        v-model:input="periodo"
+                        inputType="number"
+                        :error="errors && errors.periodo ? errors.periodo[0] : ''"
+                    />
+                </div>
+
                 <div class="flex items-center mb-4">
                                 <input id="default-radio-1" type="radio" value="user" v-model="role" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500">
                                 <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">Usuário</label>
@@ -136,6 +154,8 @@
 let name = ref(null)
 let errors = ref(null)
 let ra  = ref(null)
+let curso = ref(null)
+let periodo = ref(null)
 
 
  
@@ -143,7 +163,7 @@ let ra  = ref(null)
         errors.value = null
       
         try {
-          await adminStore.addUser(name.value, email.value, ra.value, role.value)
+          await adminStore.addUser(name.value, email.value, ra.value, role.value, curso.value, periodo.value)
           emit('close')
         } catch (error) {
         console.log(error)

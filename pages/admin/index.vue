@@ -47,10 +47,22 @@
               RA
             </th>
             <th scope="col" class="px-6 py-3">
+              Curso
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Período
+            </th>
+           
+            <th scope="col" class="px-6 py-3">
               ACESSO
             </th>
             <th scope="col" class="px-6 py-3">
               Cargo
+            </th>
+            
+           
+            <th scope="col" class="px-6 py-3">
+              Documento
             </th>
           </tr>
         </thead>
@@ -74,11 +86,28 @@
                 {{  user.ra }}
               </div>
             </td>
+
+            <td class="px-6 py-4">
+              <span v-if="user.curso">{{  user.curso }}</span>
+              <span v-else>Nenhum curso.</span>
+            </td>
+            <td class="px-6 py-4">
+              <span v-if="user.periodo">{{  user.periodo }}</span>
+              <span v-else>Nenhum período.</span>
+            </td>
         
             <MakeBlockedorUnblocked :user="user" v-if="!user.is_admin" />
             <td class="px-6 py-4" v-else></td>
         <MakeAdminOrUser :user="user" />
             
+            <td class="px-6 py-4">
+          <div v-if="user.documento" class="underline text-blue-500 cursor-pointer" @click="openAttachmentModal(user.documento)">
+            Visualizar Documento
+          </div>
+          <div v-else>
+           Nenhum documento
+          </div>
+        </td>
           </tr>
         </tbody>
       </table>
@@ -103,6 +132,11 @@
       v-if="openCropper"
       @close="openCropper = false"
     />
+    <AttachmentPreviewModal
+      v-if="attachmentModalOpen"
+      @close="attachmentModalOpen = false"
+      :documento="documentoPreview"
+    />
   </AdminLayout>
 </template>
 
@@ -119,6 +153,8 @@ definePageMeta({
 const adminStore = useAdminStore();
 const userStore = useUserStore();
 let openCropper = ref(false);
+const attachmentModalOpen = ref(false);
+const documentoPreview = ref('');
 
 onMounted(async () => {
 await adminStore.getAllUsers()
@@ -127,5 +163,12 @@ await adminStore.getAllUsers()
 useHead({
   title: "Página de Admin"
 })
+
+
+
+const openAttachmentModal = (documento) => {
+  documentoPreview.value = documento;
+  attachmentModalOpen.value = true;
+};
 
 </script>

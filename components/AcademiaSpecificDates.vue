@@ -93,6 +93,10 @@ const updateDates = () => {
   ];
 };
 
+watch(() => generalStore.disabledDays, () => {
+  updateDates();
+});
+
 onMounted(async () => {
   try {
     await generalStore.getDisabledDays();
