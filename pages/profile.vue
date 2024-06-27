@@ -81,7 +81,9 @@
                             <div class="flex items-center justify-end text-[#676B5F] text-[13px]">
                                 {{ bioLengthComputed }}/80
                             </div>
-
+                            <div class="mt-4">
+                           <span class="font-semibold">Faltas:</span> {{ userStore.faltas }}
+                          </div>
                         </div>
                     </div>
 

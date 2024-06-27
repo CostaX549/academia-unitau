@@ -17,7 +17,7 @@ export const useUserStore = defineStore('user', {
     allAgendamentos: null,
     
     isMobile: false,
-    
+    faltas: null,
     addLinkOverlay: false,
     isPreviewOverlay: false,
    
@@ -114,6 +114,7 @@ await $axios.get('/sanctum/csrf-cookie')
       this.$state.image = res.data.data.image
       this.$state.ra = res.data.data.ra
       this.$state.is_blocked = res.data.data.is_blocked === 0 ? false : true;
+      this.$state.faltas = res.data.data.faltas
       
      
 
