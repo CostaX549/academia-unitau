@@ -27,14 +27,14 @@
               >
                 <Icon name="mdi:close" size="25" />
               </div>
-              <button
-                
-               
-                @click="handleDownload(documento)"
+              <a
+                :href="documento"
+                download
+                target="_blank"
                 class="absolute right-10 mr-5 rounded-full p-1.5 bg-gray-200 hover:bg-gray-300 cursor-pointer"
               >
                 <Icon name="material-symbols:download" size="25" />
-            </button>
+            </a>
             
             </div>
   
@@ -71,30 +71,6 @@
   const props = defineProps({
     documento: String,
   });
-
-  const handleDownload = async (url) => {
-  if (!url) {
-    console.error("URL do documento não fornecida.");
-    return;
-  }
-
-  try {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const blobURL = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = blobURL;
-    a.style.display = "none";
-
-
-
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  } catch (error) {
-    console.error("Erro ao baixar o arquivo:", error);
-  }
-};
   
   // Verifica se o documento é um PDF
   const isPdf = (url) => {
