@@ -83,6 +83,10 @@
                                 <label for="default-radio-2" class="ms-2 text-sm font-medium text-gray-900">Admin</label>
                             </div>
 
+                            <div class="my-4 text-gray-800 font-semibold">
+                                A senha padrão é "password".
+                            </div>   
+
               
                           
                                 <button
