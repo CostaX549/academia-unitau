@@ -126,6 +126,25 @@ await $axios.get('/sanctum/csrf-cookie')
       await $axios.post('/api/user-image', data)
     },
 
+    async forgotpassword(email) {
+    let res = await $axios.post('/forgot-password', {
+        email: email
+     })
+  
+     return res;
+    },
+
+    async resetPassword(token, email, password, passwordConfirmation) {
+ 
+        const response = await $axios.post('/reset-password', {
+          token: token,
+          email: email,
+          password: password,
+          password_confirmation: passwordConfirmation
+        });
+        return response;
+     
+    },
   
 
   

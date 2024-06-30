@@ -47,13 +47,23 @@
                 </div>
             </form>
 
-            <div class="text-[14px] text-center pt-12">
+            <div class="text-[14px] text-center pt-8">
                 Não possui uma conta?
                 <NuxtLink 
                     to="/register"
                     class="text-blue-500 underline"
                 >
                     Registrar
+                </NuxtLink>
+            </div>
+
+            <div class="text-[14px] text-center pt-5">
+               Esqueceu a senha?
+                <NuxtLink 
+                    to="/forgot-password"
+                    class="text-blue-500 underline"
+                >
+                    Recuperar Senha
                 </NuxtLink>
             </div>
         </div>
