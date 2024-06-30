@@ -30,7 +30,7 @@
               <a
                 :href="documento"
                 download
-                target="_blank"
+                @click.prevent
                 class="absolute right-10 mr-5 rounded-full p-1.5 bg-gray-200 hover:bg-gray-300 cursor-pointer"
               >
                 <Icon name="material-symbols:download" size="25" />
