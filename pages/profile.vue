@@ -9,7 +9,7 @@
 
                     <div id="ProfileSection">
                         <div
-                            class="font-semibold pb-4"
+                            class="font-semibold pb-4 text-white"
                             :class="userStore.isMobile ? 'mt-8 text-2xl' : 'mt-20 md:mt-8 text-xl'"
                         >
                             Perfil

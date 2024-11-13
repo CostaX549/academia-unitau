@@ -20,7 +20,7 @@
                 " 
                 @focus="isFocused = true"
                 @blur="isFocused = false"
-                :class="isFocused ? 'border-blue-500' : ''"
+                :class="isFocused ? 'border-red-600' : ''"
                 :type="inputType"
                 v-model="inputComputed"
                 autocomplete="off"

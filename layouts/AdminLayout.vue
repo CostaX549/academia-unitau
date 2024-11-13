@@ -1,5 +1,5 @@
 <template>
-     <div  class="bg-[#F3F3F1] fixed w-full h-full z-[-1]" />
+     <div  class="bg-[#24305E] fixed w-full h-full z-[-1]" />
     <div id="AdminLayout" class="w-full fixed z-30">
         <div 
             v-if="!userStore.isMobile"
@@ -245,7 +245,7 @@ const links = ref([
     { name: 'Usuários', url: '/admin',   icon: 'bi:person-fill', },
     { name: 'Agendamentos', url: '/admin/agendamentos', icon: 'icon-park-outline:calendar' },
     { name: 'Academia', url: '/admin/academia', icon: 'tabler:brand-google-analytics' },
-    { name: 'Settings', url: '/', icon: 'material-symbols:settings' },
+   
 ])
 
 const linksSecondaryNav = ref([

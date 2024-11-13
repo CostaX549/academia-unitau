@@ -3,7 +3,7 @@
     <div class="relative overflow-x-auto sm:rounded-lg">
       <div class="flex items-center justify-between mt-[150px] flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 ">
         <div>
-          <h1 class="text-[30px] pl-2 font-semibold">Usuários do Aplicativo</h1>
+          <h1 class="text-[30px] pl-2 font-semibold text-white">Usuários do Aplicativo</h1>
         
           <!-- Dropdown menu -->
           <div id="dropdownAction" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
@@ -37,8 +37,8 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             
-            <th scope="col" class="px-6 py-3">
-              Name
+            <th scope="col" class="px-6 py-3 border-tl rounded-tl-lg">
+              Usuário
             </th>
             <th scope="col" class="px-6 py-3">
               Faltas
@@ -61,7 +61,7 @@
             </th>
             
            
-            <th scope="col" class="px-6 py-3">
+            <th scope="col" class="px-6 py-3 border-tr rounded-tr-lg">
               Documento
             </th>
           </tr>

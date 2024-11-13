@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-[40px] text-center font-bold pb-2">Editar Academia</h1>
+  <h1 class="text-[40px] text-center font-bold pb-2 text-white">Editar Academia</h1>
   <div class="bg-white shadow-md rounded-lg px-8 pt-6 mb-10 flex flex-col my-2 ">
     <div class="-mx-3 md:flex mb-6">
       <div class="md:w-1/2 px-3 mb-6 md:mb-0">

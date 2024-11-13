@@ -1,5 +1,5 @@
 <template>
-         <div  class="bg-[#F3F3F1] fixed w-full h-full z-[-1]" />
+         <div  class="bg-[#24305E] fixed w-full h-full z-[-1]" />
     <div id="AdminLayout" class="w-full fixed z-30">
         <div 
             v-if="!userStore.isMobile"
@@ -244,8 +244,7 @@ import image from '../assets/images/unitau (1).png';
 const links = ref([
     { name: 'Agendamentos', url: '/home',   icon: 'icon-park-outline:calendar', },
     { name: 'Perfil', url: '/profile', icon: 'bi:person-fill' },
-    { name: 'Analytics', url: '/', icon: 'tabler:brand-google-analytics' },
-    { name: 'Settings', url: '/', icon: 'material-symbols:settings' },
+ 
 ])
 
 const linksSecondaryNav = ref([

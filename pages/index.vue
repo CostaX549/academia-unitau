@@ -1,10 +1,15 @@
 <template>
     <AuthLayout>
         <div class="mt-10">
-            <h1 class="lg:text-5xl text-3xl text-blue-500 text-center font-extrabold">
-                Log in Unitau
+            <img src="~/assets/images/logo-unitau.png"  class="mx-auto w-[80px] p-2">
+            <div class="flex gap-1 items-center justify-center mt-5">
+            <h1 class="text-6xl text-white text-center font-[1000]">
+                academia 
             </h1>
-
+            <h1 class="text-6xl  text-white text-center font-light">
+                unitau
+            </h1>
+        </div>
             <form 
                 class="mt-12" 
                 @submit.prevent="login()"
@@ -47,21 +52,21 @@
                 </div>
             </form>
 
-            <div class="text-[14px] text-center pt-8">
+            <div class="text-[14px] text-center text-white pt-8">
                 Não possui uma conta?
                 <NuxtLink 
                     to="/register"
-                    class="text-blue-500 underline"
+                    class="text-white underline"
                 >
                     Registrar
                 </NuxtLink>
             </div>
 
-            <div class="text-[14px] text-center pt-5">
+            <div class="text-[14px] text-center text-white pt-5">
                Esqueceu a senha?
                 <NuxtLink 
                     to="/forgot-password"
-                    class="text-blue-500 underline"
+                    class="text-white underline"
                 >
                     Recuperar Senha
                 </NuxtLink>

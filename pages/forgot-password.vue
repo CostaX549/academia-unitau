@@ -1,9 +1,15 @@
 <template>
     <AuthLayout>
         <div class="mt-10">
-            <h1 class="lg:text-5xl text-3xl text-blue-500 text-center font-extrabold">
-                Informe seu email
+            <img src="~/assets/images/logo-unitau.png"  class="mx-auto w-[80px] p-2">
+            <div class="flex gap-1 items-center justify-center mt-2">
+            <h1 class="text-6xl text-white text-center font-[1000]">
+                academia 
             </h1>
+            <h1 class="text-6xl  text-white text-center font-light">
+                unitau
+            </h1>
+        </div>
 
             <form 
                 class="mt-12" 

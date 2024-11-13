@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center font-bold pb-2 mb-2 text-2xl sm:text-3xl lg:text-4xl">Adicionar ou Remover Datas</h1>
+    <h1 class="text-center font-bold pb-2 mb-2 text-2xl sm:text-3xl lg:text-4xl text-white">Adicionar ou Remover Datas</h1>
     <div class="flex justify-center mb-5 max-sm:mb-18 ">
       <ClientOnly>
       <CalendarDatePicker :attributes="todos" v-model:dateValue="dateValue" :columns="columns"  />

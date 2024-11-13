@@ -1,9 +1,15 @@
 <template>
     <AuthLayout>
         <div class="mt-10">
-            <h1 class="lg:text-5xl text-3xl text-blue-500 text-center font-extrabold">
-            Crie sua conta
+            <img src="~/assets/images/logo-unitau.png"  class="mx-auto w-[80px] p-2">
+            <div class="flex gap-1 items-center justify-center mt-2">
+            <h1 class="text-6xl text-white text-center font-[1000]">
+                academia 
             </h1>
+            <h1 class="text-6xl  text-white text-center font-light">
+                unitau
+            </h1>
+        </div>
 
             <form 
                 class="mt-12" 
@@ -82,11 +88,11 @@
                 </div>
 
                 <div class="mt-4">
-                    <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+                    <label class="block uppercase text-white tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
           Anexar documento da academia
         </label>
                     <label for="file-input" class="sr-only">Anexar documento</label>
-                    <input type="file" name="file-input" id="file-input" accept=".pdf, image/*" @change="handleFileChange" class="block w-full border border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4">
+                    <input type="file" name="file-input" id="file-input" accept=".pdf, image/*" @change="handleFileChange" class="block w-full border border-gray-200 shadow-sm rounded-lg text-sm text-white outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4">
                     <span v-if="errors && errors?.documento" class="text-red-500 text-[14px] font-semibold">
                   {{ errors?.documento[0]  }}
                  </span>
@@ -108,11 +114,11 @@
                 </div>
             </form>
 
-            <div class="text-[14px] text-center pt-5">
+            <div class="text-[14px] text-white text-center pt-5 pb-2">
            Já possui uma conta?
                 <NuxtLink 
                     to="/"
-                    class="text-blue-500 underline"
+                    class="text-white underline"
                 >
                 Log in
                 </NuxtLink>

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen bg-[#24305E]">
       <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md text-center">
         <h1 class="mb-4 text-2xl font-bold text-red-600">Acesso Bloqueado</h1>
         <p class="mb-4 text-gray-700">Você está bloqueado. Espere um administrador liberar seu acesso ao sistema.</p>
